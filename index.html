@@ -19,6 +19,7 @@
     <title>MEET PLAY SHARE, 메가박스</title>
 
     <style>
+    
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
         .clearfix::after{
             content:'';
@@ -61,6 +62,18 @@
             color:#fff;
             opacity:0.3;
         }
+        .icons{
+            display:inline-block;
+            margin:0;
+            border:none;
+            padding:0;
+            background-repeat:no-repeat;
+            background-position:left top;
+            background-size:100% auto;
+            font-size:0;
+            font-style:normal;
+            vertical-align:middle;
+        }
 
         .skip-menu a{
             position:fixed;
@@ -90,6 +103,7 @@
             bottom:0;
             z-index:9998;
             background-color:rgba(0,0,0,0.3);
+            display:none;
         }
         .modal-container{
             position:absolute;
@@ -122,9 +136,9 @@
             color:#000;
         }
         .btn-modal-close{
-            font-size:1.2em;
-            color:#999;
-            cursor:pointer;
+        font-size:1.2em;
+        color:#999;
+        cursor:pointer;
         }
         .btn-modal-close:hover{
             color:#000;
@@ -156,12 +170,15 @@
         .header{
             position:relative;
             z-index:1000;
-            border-bottom:1px solid rgba(255,255,255,0.5);
-            padding:10px 0;
+            border-bottom:1px solid rgba(255,255,255,0.5);            
             background-color:#0e090a;
             color:#fff;
         }
-        h1{
+        .header .desk-container{
+            padding-top:10px;
+            padding-bottom:10px;
+        }
+        .header .desk-container h1{
             position:absolute;
             left:50%;
             top:50%;
@@ -241,6 +258,379 @@
         .sub-nav li:hover{
             opacity:1;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .m-container{
+            display:none;
+            flex-flow:row nowrap;
+            justify-content:space-between;
+            align-items: center;
+        }
+        .m-container h1{
+            box-sizing:content-box;
+            width:120px;
+            padding-left:27px;
+            order:2;
+        }
+        .ticketing{
+            order:1;
+        }
+        .m-r-items{
+            order:3;
+        }
+
+
+
+
+
+        .icon-ticket{
+            width:30px;
+            height:30px;
+            background-image:url(./m-images/ico-m-ticket.png);
+        }
+        .icon-m-feed{
+            width:51px;
+            height:24px;
+            background-image:url(./m-images/ico_m_feed.png);
+        }
+        .icon-m-burger{
+            width:30px;
+            height:30px;
+            background-image:url(./m-images/ico-m-burger.png);
+        }
+
+        .m-login,.m-nav{
+            display:none;
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0; 
+            padding:20px;           
+            background-color:#fff;
+            color:#666;
+        }
+        .m-login h2{
+            margin-bottom:40px;
+            font-size:1.4em;
+            text-align:center;
+        }
+        .m-login form{
+            display:flex;
+            flex-flow:row wrap;
+            justify-content:space-between;            
+        }
+        .m-login form>*{
+            width:100%;
+            margin-bottom:20px;
+        }
+        .m-login form input[placeholder]{
+            border:none;
+            border-bottom:1px solid rgba(0,0,0,0.3);
+            padding:0.8em 0;
+            outline:none;
+            font-size:1.2em;
+            color:#999;
+        }
+        .m-login form label,
+        .m-login form .e-login{
+            width:auto;
+        }
+        .m-login form .e-login{
+            font-weight:300;
+            color:#503396;
+        }
+        .m-login form .e-login span:last-child{
+            display:inline-block;
+            border:1px solid #503396;
+            padding:0 6px;
+            border-radius:4px;
+            font-size:xx-small;
+        }
+        .m-login form label input{
+            display:none;
+        }
+
+        .m-login form button{
+            border:none;
+            padding:1em;
+            outline:none;
+            background-color:#503396;
+            font-weight:500;
+            font-size:1.4em;
+            color:#fff;
+            text-align:center;
+        }
+        .m-login form ul,
+        .m-login form .web-login{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:center;
+        }
+        .m-login form ul li:nth-child(1),
+        .m-login form ul li:nth-child(2){
+            margin-right:1.5em;
+        }
+        .m-login form .web-login .icons{
+            margin-right:40px;
+        }
+        .m-login form .web-login .icons:last-child{
+            margin-right:0;
+        }
+        .m-ico-check{
+            width:14px;
+            height:14px;
+            margin-top:-3px;
+            background-image:url(./m-images/ico-m-check.png);
+            background-size:auto 100%;
+        }
+        input[type="checkbox"]:checked + .save-id .m-ico-check{
+            background-position-x:right;
+        }
+        .web-login .icons{
+            width:50px;
+            height:50px;
+        }
+        .m-ico-facebook{
+            background-image:url(./m-images/ico-m-facebook.png);
+        }
+        .m-ico-naver{
+            background-image:url(./m-images/ico-m-naver.png);
+        }
+        .m-ico-kakao{
+            background-image:url(./m-images/ico-m-kakao.png);
+        }
+        .m-ico-paico{
+            background-image:url(./m-images/ico-m-payco.png);
+        }
+
+        .m-login .ad-box .img-box{
+            width:80%;
+            margin:0 auto;
+        }
+        .btn-close-login{
+            position:absolute;
+            right:20px;
+            top:20px;
+            width:20px;
+            height:20px;
+            cursor:pointer;
+        }
+        .btn-close-login::before,
+        .btn-close-login::after{
+            content:'';
+            display:block;
+            width:26px;
+            height:2px;
+            background-color:#333;
+            position:absolute;
+            left:50%;
+            top:50%;
+        }
+        .btn-close-login::before{
+            transform:translate(-50%,-50%) rotate(45deg);
+        }
+        .btn-close-login::after{
+            transform:translate(-50%,-50%) rotate(-45deg);
+        }
+
+        .m-nav{
+            background-color:#0e090a;
+            padding:0;
+        }
+        .rnb-top{
+            position:relative;
+            padding:20px;
+        }
+        .rnb-top h2{
+            display:inline-block;
+            font-weight:700;
+            font-size:1.4em;
+            color:#fff;
+        }
+        .btn-close-nav{
+            position:absolute;
+            right:25px;
+            top:25px;
+            width:10px;
+            height:10px;
+            cursor:pointer;
+        }
+        .btn-close-nav::before,
+        .btn-close-nav::after{
+            content:'';
+            display:block;
+            width:20px;
+            height:2px;
+            background-color:#fff;
+            position:absolute;
+            left:50%;
+            top:50%;
+        }
+        .btn-close-nav::before{
+            transform:translate(-50%,-50%) rotate(45deg);
+        }
+        .btn-close-nav::after{
+            transform:translate(-50%,-50%) rotate(-45deg);
+        }
+        .rnb-top .lt{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:space-between;
+            margin-top:30px;
+        }
+        .rnb-top ul{
+            display:flex;
+            flex-flow:row nowrap;
+        }
+        .rnb-top ul li{
+            margin-right:10px;
+            color:#037b94;
+        }
+        .rnb-top .lt ul li:nth-child(1):after{
+            content:'';
+            display: inline-block;
+            top: 50%;
+            right: 0;
+            width: 1px;
+            height: 10px;
+            margin-left:10px;
+            background-color:#fff;
+        }
+
+        .rnb-mid{
+            background-color: #fff;
+            border-top-right-radius: 18px;
+            border-top-left-radius: 18px;
+        }
+        .rnb-mid{
+            padding:20px;
+        }
+        .quick-menu{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:space-between;
+            font-size:0.9em;
+        }
+        .quick-menu p{
+            font-weight:900;
+            color:#503396;
+        }
+
+        .rnb-iconarea{
+            margin-bottom:50px;
+        }
+        .rnb-iconarea ul{
+            display:flex;
+            flex-flow:row wrap;
+        }
+        .rnb-iconarea ul li{
+            width:25%;
+            text-align:center;
+            font-size:0.9em;
+        }
+        .rnb-iconarea ul li img{
+            display:block;
+            width:60px;
+            height:60px;
+            padding:9px;
+            margin:30px auto 6px;
+            border-radius:30px;
+            border:1px solid #c3a6ff;
+        }
+        .rnb-allmenu{
+            margin-bottom:50px;
+        }
+        .rnb-allmenu ul{
+            display:flex;
+            flex-flow:row wrap;
+        }
+        .rnb-allmenu ul li{
+            width:50%;
+            margin-bottom:15px;
+            font-size:0.9em;
+        }
+        .m-notice-container{
+            padding: 0 15px;
+            height: 50px;
+            margin-bottom:30px;
+        }
+        .m-notice-container p{
+            height: 50px;
+            line-height: 47px;
+            color: #14b9cb;
+            text-align:center;
+            font-size: 0.9em;
+            background-color: #f1faff;
+            border-radius: 10px;
+        }
+        .rnb-botlink{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:space-between;
+            margin-bottom:100px;
+        }
+        .m-nav .icons{
+            width:40px;
+            height:40px;
+            margin-right:10px;
+        }
+        .sns-ico-m-facebook{
+            background-image:url(./m-images/ico-m-facebook.png);
+        }
+        .sns-ico-m-youtube{
+            background-image:url(./m-images/sns-ico-m-youtube.png);
+        }
+        .sns-ico-m-insta{
+            background-image:url(./m-images/sns-ico-m-insta.png);
+        }
+        .rnb-botlink .rt{
+            display:flex;
+            flex-flow:row nowrap;
+            align-items:center;
+        }
+        .rnb-botlink .rt li{
+            margin-right:10px;
+            font-weight:300;
+            font-size:0.9em;
+            color:#999;
+        }
+        .rnb-botlink .rt li:last-child{
+            margin-right:0;
+        }
+        .rnb-banner{
+            position:fixed;
+            height: 100px;
+            left:0;
+            bottom:0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         .movie-list{
@@ -441,7 +831,7 @@
             animation-name:mouse-ani;
             animation-duration:2s;
             animation-timing-function:ease;
-            animation-iteration-count:infinite;
+            animation-iteration-count:infinite;            
         }
         .mouse-move::after{
             content:'';
@@ -449,7 +839,7 @@
             width:2px;
             height:8px;
             margin:6px auto;
-            background-color: #fff;
+            background-color:#fff;
         }
 
         /* 마우스 애니메이션 */
@@ -467,7 +857,7 @@
                 transform:translateY(0);
             }
         }
-        
+
         .benefit{
             position:relative;
         }
@@ -480,6 +870,7 @@
             height:300px;
             background-color:#503396;
         }
+
         .benefit-contents{
             display:flex;
             flex-flow:row nowrap;
@@ -487,7 +878,7 @@
             margin-bottom:50px;
         }
         .benefit-list{
-            width:60.454545%;
+            width:60.45454545454545%;
             display:flex;
             flex-flow:row wrap;
             justify-content:space-between;
@@ -496,14 +887,14 @@
             width:50%;
         }
         .benefit-banner01{
-            width:66.315789%;
+            width:66.31578947368421%;            
         }
         .benefit-banner02{
-            width:30.67669172932331%;
+            width:30.67669172932331%;            
         }
         .benefit-ad{
             position:relative;
-            width:37.727272%;
+            width:37.72727272727273%;
             border-radius:6px;
             overflow:hidden;
         }
@@ -533,25 +924,30 @@
         }
         .controls-box>div{
             position:static !important;
-            display:flex;
+            display:flex;            
             justify-content:center;
-            align-items:center;
+            align-items:center;            
         }
         .controls-box>.scrollbar{
             width:75%;
             position:relative !important;
         }
+        
+
+
+
         .scrollbar span{
             width:25%;
-            height:2px;
+            height:2px;                        
             background-color:rgba(0,0,0,0.1);
         }
+
         .scrollbar #move-span{
-            position:absolute;
+            position:absolute;            
             left:0;
             top:50%;
             transform:translateY(-50%);
-
+        
             display:block;
             text-indent:-999999px;
             width:25%;
@@ -562,13 +958,13 @@
             width:5%;
             margin:0;
         }
-        .swiper-button-prev::after,.swiper-button-next::after{
+        .swiper-button-prev:after,.swiper-button-next:after{
             font-weight:900;
             font-size:8px;
             color:#352461;
         }
         .btn-play-pause{
-            width:5%;
+            width:5%;            
         }
         .btn-play-pause i::before{
             color:#352461;
@@ -578,10 +974,10 @@
         }
         .benefit-nav ul{
             display:flex;
-            flex-flow:row nowrap;
+            flex-flow:row nowrap;            
             align-content:center;
-            font-weight:300;
-            font-size:1.1em;
+            font-weight:300; 
+            font-size:1.1em;           
             color:rgba(255,255,255,0.8);
         }
         .benefit-nav li{
@@ -608,17 +1004,18 @@
             align-content:flex-start;
         }
         .select-curation{
-            flex:1;
-            margin-right:50px;
+            flex:1;            
+            margin-right:50px;            
         }
         .poster-over{
             position:absolute;
             left:-10px;
             top:-5px;
-            padding:8px 10px 20px;
-            border-bottom-left-radius:50%;
-            border-bottom-right-radius:50%;
-            background-color:#037b94;
+            z-index:100;
+            padding:8px 10px 36px;
+            border-bottom-left-radius:40px;
+            border-bottom-right-radius:40px;
+            background: #037b94;
 
             text-transform:uppercase;
             font-weight:700;
@@ -626,9 +1023,11 @@
             color:#fff;
             line-height:1.2em;
         }
+
+
         .curation-content{
-            flex:3;
-            max-width:71.76724137931034%;
+            flex:3;  
+            max-width:71.76724137931034%;                     
         }
         .curation-content-tit{
             margin-bottom:20px;
@@ -647,6 +1046,7 @@
         .curation-content-txt{
             margin-bottom:20px;
         }
+
         .curation .poster{
             overflow:initial;
         }
@@ -658,12 +1058,15 @@
         .curation-content-poster .poster{
             margin-top:5px;
         }
+        .curation-content-poster .poster img{
+            cursor: pointer;
+        }
         .movie-level{
             position:absolute;
             left:10px;
             top:-5px;
             
-            width:26px;
+            width:26px;            
             background-color:#503396;
 
             font-size:1.2em;
@@ -681,9 +1084,9 @@
         .megainfo-list ul li{
             border-radius:6px;
             overflow:hidden;
-            filter:grayscale(1) opacity(0.7);
+            filter:grayscale(1) opacity(0.5);
             transition:0.3s;
-            box-shadow:5px 5px 10px rgba(0,0,0,0.3);
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
         }
         .megainfo-list ul li:hover{
             filter:grayscale(0) opacity(1);
@@ -692,7 +1095,7 @@
             margin:50px 0 46px;
             border-top:1px solid rgba(0,0,0,0.3);
             border-bottom:1px solid rgba(0,0,0,0.3);
-            padding:16px 0;
+            padding:16px 0;            
         }
         .notice-container ul{
             display:grid;
@@ -724,7 +1127,7 @@
         }
         .megainfo-nav ul{
             display:grid;
-            grid-template-columns:repeat(6,1fr);
+            grid-template-columns:repeat(6,1fr);                        
         }
         .megainfo-nav ul li{
             display:flex;
@@ -737,7 +1140,7 @@
             height:60px;
             background-repeat:no-repeat;
             background-position:center;
-            background-size:contain;
+            background-size:contain;            
         }
         .bg-mega01 a{
             background-image:url(./images/ico-megainfo01.png);
@@ -766,6 +1169,48 @@
         }
         .banner-bottom .img-box{
             position:relative;
+        }
+
+        .bnb{
+            display:none;
+            position:fixed;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index:6000;
+            padding:10px 0;
+            background-color:#fff;
+        }
+        .bnb ul{
+            display:flex;
+            flex-flow:row nowrap;
+            justify-content:space-around;
+            align-items:center;
+        }
+        .bnb ul a{
+            display:flex;
+            flex-flow:column nowrap;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .bnb .icons{
+            width:40px;
+            height:40px;
+        }
+        .m-ico-home{
+            background-image:url(./m-images/bnb-home-on.png);
+        }
+        .m-ico-store{
+            background-image:url(./m-images/bnb-store_new.png);
+        }
+        .m-ico-reserve{
+            background-image:url(./m-images/bnb-reserve_new.png);
+        }
+        .m-ico-event{
+            background-image:url(./m-images/bnb-event_new.png);
+        }
+        .m-ico-mymega{
+            background-image:url(./m-images/bnb-mymega_new.png);
         }
 
         .footer{
@@ -806,9 +1251,8 @@
         }
         .sns-list li{
             display:inline-block;
-        }   
-
-
+        }
+        
 
         @media (max-width:1200px){
             .btn-banner-top-close{
@@ -825,7 +1269,7 @@
         }
 
         @media (max-width:1024px){
-            h1{               
+            .header .desk-container h1{               
                 left:20px;                
                 transform:translate(0,-50%);
             }
@@ -902,6 +1346,7 @@
             .footer-nav li:nth-child(2n){
                 display:none;
             }
+
         }
 
         @media (max-width:840px){
@@ -922,84 +1367,24 @@
                 right:50%;
             }
             .banner-top{display:none;}
-            .header{padding:20px 0;}
-            .header .container{
-                display:flex;
-                justify-content:space-between;
-            }
-            
-            h1{
-                left:50%;
-                transform:translate(-50%,-50%);
-            }
-            .quick-nav{
-                flex-direction:column;
-                justify-content:flex-start;
+
+            .header{
                 position:fixed;
-                left:-50%;
-                right:100%;
-                top:0;
-                bottom:0;
-                padding:30px 20px;
-                background-color:#000;
-                transition:0.3s;
-            }
-            
-            .quick-nav.show-quick{
                 left:0;
-                right:50%;
-            }
-            
-            .quick-nav>ul:first-child{
-                order:2;
-                flex-direction:column;
-            }            
-            .quick-nav>ul:first-child>li{
-                margin-bottom:20px;
-                font-size: 1.4em;
-                opacity:1;
-            }
-            .quick-nav>ul:last-child{
-                flex-wrap:wrap;                
-                order:1;
-                margin-bottom:30px;
-            }           
-            
-            .nav{
-                flex-direction:column;
-                justify-content: flex-start;
-                position:fixed;
-                left:100%;
-                right:-50%;
-                top:0;
-                bottom:0;
-                padding:30px 20px;
-                background-color:#000;
-                transition:0.3s;
-            }
-            .nav.show-nav{
-                left:50%;
                 right:0;
-            }
-            .nav>ul{
-                flex-direction:column;               
-            }
-            .nav>ul:first-child{
-                margin-right:0;
-            }
-            .nav>ul>li{
-                margin-right:0;
-                margin-bottom:20px;
-            }
-            .sub-nav{
-                position:static;
-            }
-            .sub-nav>ul{
-                flex-direction:column;
-                padding:0;
+                top:0;
+                border-bottom:none;                
             }
 
-            .btn-mo-quick,.btn-mo-nav{display:block;}
+            .header .desk-container{display:none;}
+            .header .m-container{
+                display:flex;
+            }
+
+            .wrap>.movie-list{
+                padding-top:calc(40px + 55px);
+            }
+
             .benefit-list{
                 width:100%;
             }
@@ -1029,8 +1414,11 @@
             .megainfo-nav ul li p{
                 display:none;
             }
-        }
-
+            .bnb{
+                display:block;
+            }
+        }    
+        
         @media (max-width:640px){
             .megainfo-list ul{
                 grid-template-columns:repeat(3,1fr);
@@ -1060,13 +1448,15 @@
             }
             .controls-box>.scrollbar{
                 width:50%;
-            }
-            .swiper-button-prev,.swiper-button-next{
+            }  
+            .swiper-button-prev, 
+            .swiper-button-next,.swiper-button-prev, 
+            .swiper-button-next{
                 width:10%;
-            }
+            } 
             .swiper-pagination{
                 width:20%;
-            }
+            }         
             .benefit-banner01{
                 width:100%;
             }
@@ -1130,7 +1520,7 @@
             </div>
         </section>
         <header class="header">
-            <div class="container">
+            <div class="container desk-container">
                 <h1>
                     <span>메가박스</span>
                     <div class="img-box">
@@ -1214,6 +1604,158 @@
                             </div>
                         </li>
                     </ul>
+                </div>
+            </div>
+            <div class="container m-container">
+                <h1><a href="./index.html"><img src="./m-images/m-logo-white.png" alt="시작페이지로 이동"></a></h1>
+                <div class="ticketing">
+                    <a href="#">
+                        <i class="icons icon-ticket" id="btn-ticket">예매</i>
+                    </a>
+                </div>
+                <div class="m-r-items">
+                    <a href="#">
+                        <i class="icons icon-m-feed">피드</i>
+                    </a>
+                    <a href="#">
+                        <i class="icons icon-m-burger">메뉴</i>
+                    </a>
+                </div>
+            </div>
+            <div class="container m-login">
+                <h2>로그인</h2>
+                <form>
+                    <input type="text" placeholder="아이디">
+                    <input type="password" placeholder="비밀번호">
+                    <label>
+                        <input type="checkbox">
+                        <span class="save-id">
+                            <i class="icons m-ico-check"></i>
+                        </span>
+                        아이디 저장
+                    </label>
+                    <div class="e-login">
+                        <span>휴대폰 간편로그인</span>
+                        <span>광고</span>
+                    </div>
+                    <button type="button">로그인</button>
+                    <ul>
+                        <li><a href="#">ID/PW 찾기</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">비회원 예매확인</a></li>
+                    </ul>
+                    <div class="web-login">
+                        <i class="icons m-ico-facebook"></i>
+                        <i class="icons m-ico-naver"></i>
+                        <i class="icons m-ico-kakao"></i>
+                        <i class="icons m-ico-paico"></i>
+                    </div>
+                </form>
+                <div class="ad-box">
+                    <div class="img-box">
+                        <a href="#"><img src="./images/banner-mid.jpg" alt="현대해상 광고"></a>
+                        <div class="ad">ad</div>
+                    </div>
+                </div>
+                <div class="btn-close-login"></div>
+            </div>
+            <div class="container m-nav">
+                <div class="rnb-top">
+                    <h2>로그인 해주세요:)</h2>
+                    <i class="icons ic-set"></i>
+                    <div class="btn-close-nav"></div>
+                    <div class="lt">
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                        </ul>
+                        <a href="#">비회원 예매확인</a>
+                    </div>
+                </div>
+                <div class="rnb-mid">
+                    <div class="quick-menu">
+                        <p>QUICK MENU</p>
+                        <a href="#" class="btn-m-all">전체메뉴 보기</a>
+                    </div>
+                    <div class="rnb-iconarea">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="./m-images/rnb_ic_movie.png" alt="영화별 예매">
+                                    <span>영화별 예매</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./m-images/rnb_ic_theater.png" alt="극장별 예매">
+                                    <span>극장별 예매</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./m-images/rnb_ic_special.png" alt="특별관 예매">
+                                    <span>특별관 예매</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./m-images/rnb_ic_nscreen.png" alt="N스크린">
+                                    <span>N스크린</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./m-images/rnb_ic_private.png" alt="더 부티크 프라이빗">
+                                    <span>더 부티크<br>프라이빗</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./m-images/rnb_ic_event.png" alt="이벤트">
+                                    <span>이벤트</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./m-images/rnb_ic_sale.png" alt="제휴/할인">
+                                    <span>제휴/할인</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rnb-allmenu">
+                        <ul>
+                            <li>전체영화</li>
+                            <li>나의 메가박스</li>
+                            <li>스토어</li>
+                            <li>극장안내</li>
+                            <li>무비피드</li>
+                            <li>무비포스트</li>
+                            <li>스페셜 멤버십</li>
+                            <li>멤버십 안내</li>
+                            <li>VIP 라운지</li>
+                        </ul>
+                    </div>
+                    <div class="m-notice-container">
+                        <p>
+                            <i class="ico-rnb-notice"></i>
+                            [공지] 2022 메가박스 &lt;메가 골드 위크&gt; 당첨자 발표
+                        </p>
+                    </div>
+                    <div class="rnb-botlink">
+                        <div class="sns">
+                            <i class="icons sns-ico-m-facebook"></i>
+                            <i class="icons sns-ico-m-youtube"></i>
+                            <i class="icons sns-ico-m-insta"></i>
+                        </div>
+                        <div class="rt">
+                            <li><a href="#">알림함</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="rnb-banner">
+                    <a href="#"><img src="./images/banner-bottom.jpg" alt="현대해상 광고"></a>
                 </div>
             </div>
         </header>
@@ -1449,14 +1991,13 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="poster-bottom">
-                                        <button type="button" class="btn-best">
-                                            <i class="far fa-heart"></i>
-                                            <span>102<i class="far fa-heart"></i>
-                                            <span>258</span></span>
-                                        </button>
-                                        <button type="button" class="btn-ticket">예매</button>
-                                    </div>
+                                        <div class="poster-bottom">
+                                            <button type="button" class="btn-best">
+                                                <i class="far fa-heart"></i>
+                                                <span>200</span>
+                                            </button>
+                                            <button type="button" class="btn-ticket">예매</button>
+                                        </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide10">
                                     <div class="poster">
@@ -1752,8 +2293,7 @@
                                     <div class="poster-bottom">
                                         <button type="button" class="btn-best">
                                             <i class="far fa-heart"></i>
-                                            <span>102<i class="far fa-heart"></i>
-                                            <span>258</span></span>
+                                            <span>200</span>
                                         </button>
                                         <button type="button" class="btn-ticket">예매</button>
                                     </div>
@@ -2352,8 +2892,7 @@
                                     <div class="poster-bottom">
                                         <button type="button" class="btn-best">
                                             <i class="far fa-heart"></i>
-                                            <span>102<i class="far fa-heart"></i>
-                                            <span>258</span></span>
+                                            <span>200</span>
                                         </button>
                                         <button type="button" class="btn-ticket">예매</button>
                                     </div>
@@ -2750,6 +3289,42 @@
                 </div>
             </div>
         </section>
+        <section class="bnb">
+            <div class="container bnb-container">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="icons m-ico-home"></i>
+                            <span>홈</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icons m-ico-store"></i>
+                            <span>스토어</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icons m-ico-reserve"></i>
+                            <span>예매</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icons m-ico-event"></i>
+                            <span>이벤트</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icons m-ico-mymega"></i>
+                            <span>MY</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
         <footer class="footer">
             <div class="container">
                 <div class="in clearfix">
@@ -2798,8 +3373,8 @@
     
 
 
-
-
+    <!-- 내가 직접 만든 함수 -->
+    <script src="./js/fn-vanilla.js"></script>
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -2808,6 +3383,26 @@
     <!-- swiper Js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.3/swiper-bundle.min.js" integrity="sha512-+1MtN0rwSlEnZo0agG99mCQChlBtfe8hyHItwWtgiD33mWvaNVZkZB9yX2S92z5HgDg1+EcitjutZejbHUcZAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        benefitBanner01();
+        benefitBanner02();
+
+        if($.cookie('modal-popup') == 'no'){
+            $('.modal-popup').css('display','none');
+        }else{
+            $('.modal-popup').css('display','block');
+        }
+
+
+
+        
+        let expImg = $('.movie-exp img');
+        let filmImg = $('.film img');
+        let clasicImg = $('.clasic img');
+
+        setList(expImg,'exp');
+        setList(filmImg,'film');
+        setList(clasicImg,'clasic');
+
         // modal close event
         $('.btn-modal-close').on({
             'click':function(){
@@ -2818,49 +3413,13 @@
             }
         })
 
-        if($.cookie('modal-popup') == 'no'){
-            $('.modal-popup').css('display','none');
-        }else{
-            $('.modal-popup').css('display','block');
-        }
-
         // banner top close event
         $('.btn-banner-top-close').on({
             'click':function(){
                 $('.banner-top').slideUp();
             }
         })
-
-        // sub-nav call event
-        $('.nav>ul>li').on({
-            'mouseover':function(){
-                $('.sub-nav').css('display','none');
-                $(this).children('.sub-nav').css('display','block');
-            }
-        });
-
-        // sub nav close event
-        $('.sub-nav').on({
-            'mouseout':function(){
-                $(this).css('display','none');
-            }
-        })
-
-        // mo quick menu call event
-        $('.btn-mo-quick').on({
-            'click':function(){               
-                $('.wrap,.quick-nav').toggleClass('show-quick');
-            }
-        })
-
-
-        // mo nav call event
-        $('.btn-mo-nav').on({
-            'click':function(){               
-                $('.wrap,.nav').toggleClass('show-nav');
-            }
-        })
-
+        
         // window resize event
         $(window).resize(function(){
             let winWidth = $(this).width();
@@ -2905,23 +3464,24 @@
                 },
             },
         });
-
+        
         // benefit-slider01 swiperJs
-        var ben01 = new Swiper(".benefit-slider01 .swiper",{
+        var ben01 = new Swiper(".benefit-slider01 .swiper",{ 
             allowTouchMove:false,
             effect:'fade',
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
-            },
+            },            
             loop:true,
             pagination: {
                 el: '.swiper-pagination',
                 type: 'fraction',
             },
         })
+        
         // benefit-slider02 swiperJs
-        var ben02 = new Swiper(".benefit-slider02 .swiper",{      
+        var ben02 = new Swiper(".benefit-slider02 .swiper",{                       
             direction:'horizontal',
             allowTouchMove:false,
             loop:true,
@@ -2930,28 +3490,6 @@
         ben01.controller.control = ben02;
         ben02.controller.control = ben01;
 
-        // benefit random banner01
-        let acBanNum1 =Math.floor(Math.random()*4);
-        let acBan1 = $('.benefit-banner01 a');
-        acBan1.removeClass('active');
-        acBan1.eq(acBanNum1).addClass('active');
-
-        // benefit random banner02
-        let acBanNum2 =Math.floor(Math.random()*3);
-        let acBan2 = $('.benefit-banner02 a');
-        acBan2.removeClass('active');
-        acBan2.eq(acBanNum2).addClass('active');
-
-
-        
-        let expImg = $('.movie-exp img');
-        let filmImg = $('.film img');
-        let clasicImg = $('.clasic img');
-
-        setList(expImg,'exp');
-        setList(filmImg,'film');
-        setList(clasicImg,'clasic');
-        
 
 
         function setList(target,stSrc){
@@ -2970,13 +3508,13 @@
             'click':function(){
                 $('.btn-play-pause i').toggleClass('active');
                 if($('.play').hasClass('active')){
-                    ben01.autoplay.stop();
+                    ben01.autoplay.stop();                    
                 }else{
                     ben01.autoplay.start();
                 }
             }
         })
-
+        
 
 
         // slide change event
@@ -2993,7 +3531,9 @@
             }
         });
 
-        // curation swiperJs
+        
+
+        // curation swiper
         const cuSwiper = new Swiper('.curation .swiper',{
             spaceBetween:20,
             breakpoints:{
@@ -3008,10 +3548,10 @@
                 },
                 1200:{
                     slidesPerView:4,
-                },
+                }
             }
         });
-
+    
         // curation poster event
         let cuConImg = $('.curation-content-poster .poster img');
         let cuSelImg = $('.select-curation .poster img');
@@ -3019,18 +3559,130 @@
             'click':function(){
                 let cuImgSrc = $(this).attr('src');
                 cuSelImg.attr('src',cuImgSrc);
-                let selectIdx = cuConImg.index(this);
+                let selectIdx = cuConImg.index(this);                
                 cuLoad(selectIdx);
             }
         })
 
-        // curation aJax
         cuLoad(0);
 
         // curation load function
         function cuLoad(idxNum){
             $('#curation-ajax').load('curation.html #curation0' + idxNum);
         }
+
+
+
+        // 모바일 이벤트
+        // jQuery
+        // 로그인폼 열기
+        // $('#btn-ticket').click(function(){            
+        //     let loginCfm = confirm('로그인이 필요한 서비스입니다\n로그인 할까요?');
+        //     let loginEl = $('.m-login');
+        //     if(loginCfm){
+        //         mobileForm('hidden','block','scroll',loginEl)
+        //     }
+        // })
+
+        // 로그인폼 닫기
+        // $('.btn-close-login').click(function(){
+        //     let loginEl = $('.m-login');
+        //     mobileForm('scroll','none','hidden',loginEl);
+        // })       
+
+        // 네비게이션 열기
+        // $('.icon-m-burger').click(function(){
+        //     let navEl = $('.m-nav');
+        //     mobileForm('hidden','block','scroll',navEl);
+        // })
+
+        // 네비게이션 닫기
+        // $('.btn-close-nav').click(function(){
+        //     let navEl = $('.m-nav');
+        //     mobileForm('scroll','none','hidden',navEl);    
+        // })
+        
+
+        // function mobileForm(bodyValue,tarValue01,tarValue02,target){
+        //     $('body').css('overflow',bodyValue);
+        //     target.css({
+        //         'display':tarValue01,
+        //         'overflow-y':tarValue02,
+        //     })
+        // }
+        
+        // //Vanilla Js
+        // let btnLogin = document.getElementById('btn-ticket');
+        // let btnCloseLogin = document.querySelector('.btn-close-login')
+        // let btnNav = document.querySelector('.icon-m-burger');
+        // let btnCloseNav = document.querySelector('.btn-close-nav');
+
+        // btnLogin.onclick = loadLogin;
+        // btnCloseLogin.onclick = closeLogin;
+        // btnNav.onclick = loadNav;
+        // btnCloseNav.onclick = closeNav;
+
+        // function loadLogin(){
+        //     let logCfm = confirm('로그인 후 사용가능합니다.\n로그인 하시겠습니까?');
+        //     let mLogin = document.querySelector('.m-login');
+        //     if(logCfm){
+        //         mLogin.style.display='block';
+        //     }    
+        //     modalScr('hidden','scroll',mLogin);
+        // }
+        // function closeLogin(){
+        //     let mLogin = document.querySelector('.m-login');
+        //     mLogin.style.display='none';
+        //     modalScr('scroll','hidden',mLogin);
+        // }
+        // function loadNav(){
+        //     let mNav = document.querySelector('.m-nav');
+        //     mNav.style.display='block';
+        //     modalScr('hidden','scroll',mNav);
+        // }
+        // function closeNav(){
+        //     let mNav = document.querySelector('.m-nav');
+        //     mNav.style.display='none';
+        //     modalScr('scroll','hidden',mNav);
+        // }
+        // function modalScr(item01,item02,item03){
+        //     document.querySelector('body').style.overflow=item01;
+        //     item03.style.overflowY = item02;
+        // }
+
+        // Vanilla JS
+
+        let bodyEl = document.querySelector('body');
+        let loginEl = document.querySelector('.m-login');
+        let navEl = document.querySelector('.m-nav');
+        
+        let btnOpLog = document.querySelector('.icon-ticket');
+        let btnOpNav = document.querySelector('.icon-m-burger');
+        let btnClLog = document.querySelector('.btn-close-login');
+        let btnClNav = document.querySelector('.btn-close-nav');
+        
+        // 로그인 오픈
+        btnOpLog.addEventListener('click',function(){
+            let loginCfm = confirm('로그인이 필요한 서비스입니다\n로그인으로 이동할까요?');
+            if(loginCfm){
+                mobileForm('hidden','block','scroll',loginEl);
+            }            
+        });
+
+        // 로그인 닫기
+        btnClLog.addEventListener('click',function(){
+            mobileForm('scroll','none','hidden',loginEl)
+        })
+            
+        // 내비게이션 오픈
+        btnOpNav.addEventListener('click',function(){
+            mobileForm('hidden','block','scroll',navEl);
+        });
+
+        // 네비 닫기
+        btnClNav.addEventListener('click',function(){
+            mobileForm('scroll','none','hidden',navEl)
+        })
     </script>
 </body>
 </html>
